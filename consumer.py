@@ -21,7 +21,7 @@ class Consumer:
         )
         print('Connected to kafka.')
 
-        self.sql_connection = psycopg2.connect(secrets.SQL_URL)
+        self.sql_connection = psycopg2.connect(secrets.POSTGRES_URL)
         self.sql_connection.autocommit = True
         self.cursor = self.sql_connection.cursor(cursor_factory=RealDictCursor)
         print('Connected to PostgreSQL.')
